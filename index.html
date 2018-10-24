@@ -24,133 +24,136 @@
 </head>
 
 <body>
-	<div class="reveal">
-		<div class="slides">
-			<section>
-				<header>
-					<h1>Summarizer #31</h1>
-					<h2 style="font-size:1em;">Nuno Amaral @ #19_Bootcamp</h2>
-				</header>
-                <br />
-				<p class="fragment fade-in">Please don't follow me on your screen:
-					<a href="https://n20amaral.github.io/summarizer31">n20amaral.github.io/summarizer31</a>
-                </p>
-                <br />
-                <img style="border:0; box-shadow: 0 0 0" src="img/logoac.png" />
-				<aside class="notes"></aside>
-			</section>
-			<section>
-                <h3 style="color:red;">Bootcamp Day 31 Overview</h3>
-                <p class="fragment fade-in">Simple Web Server Solution</p>
-                <p class="fragment fade-in">Concurrency Programming</p>
-                <aside class="notes">Homeworks: Ping of Death and Strategy Pattern. Summarizer: another awesome design</aside>
-			</section>
-			<section>
-				<header>
-					<h3 style="color:red;">Concurrency Programming</h3>
-				</header>
-				<section>
-					<h4>What is concurrency?</h4>
-					<div class="display:flex; align-content:space-between">
-						<div>
-							<img style="max-width: 30vh;" src="img/concurrency.jpg" />
+		<div class="reveal">
+				<div class="slides">
+					<section>
+						<header>
+							<h1>Summarizer #31</h1>
+							<h2 style="font-size:1em;">Nuno Amaral @ #19_Bootcamp</h2>
+						</header>
+						<br />
+						<p class="fragment fade-in">Please don't follow me on your screen:
+							<a href="https://n20amaral.github.io/summarizer31">n20amaral.github.io/summarizer31</a>
+						</p>
+						<br />
+						<img style="border:0; box-shadow: 0 0 0" src="img/logoac.png" />
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h3 style="color:red;">Bootcamp Day 31 Overview</h3>
+						<p class="fragment fade-in">Simple Web Server Solution</p>
+						<p class="fragment fade-in">Concurrency Programming</p>
+						<aside class="notes">Homeworks: Ping of Death and Strategy Pattern. Summarizer: another awesome design</aside>
+					</section>
+					<section>
+						<header>
+							<h3 style="color:red;">Concurrency Programming</h3>
+						</header>
+						<section>
+							<h4>What is concurrency?</h4>
+							<div class="display:flex; align-content:space-between">
+								<div>
+									<img style="max-width: 30vh;" src="img/concurrency.jpg" />
+								</div>
+								<div>
+									<p class="fragment" style="text-align: center;"><img class="fragment" style="vertical-align: middle; border: 0; box-shadow: 0 0 0; max-height: 50px;" src="img/wrong.png"/> "Concurrency is running several tasks at same time."</p>
+									<p class="fragment" style="text-align: center;"><img class="fragment" style="vertical-align: middle; border: 0; box-shadow: 0 0 0; max-height: 50px;" src="img/right.png"/> "Concurrency is when a task is broken down into smaller pieces and run simutaneously."</p>
+								</div>
+							</div>
+							<aside class="notes">
+								One way to achieve conncurency is with multithreading. and for multithreading we need threads.
+							</aside>
+						</section>
+					</section>
+					<section>
+						<header>
+							<h3 style="color:red;">Threads</h3>
+						</header>
+						<section>
+						<div style="display: flex; align-content: space-between;">
+							<div class="right-divider">
+								<img style="max-width: 30vh;" src="img/thread.jpg" />
+							</div>
+							<div>
+								<p class="fragment">A thread is an independent path of code execution.</p>
+								<p class="fragment">Share process-wide memory and resources.</p>
+								<p class="fragment">Cannot exist outside of the process lifetime.</p>
+								<p class="fragment">Have their own stack and memory management.</p>
+							</div>
 						</div>
-						<div>
-							<p class="fragment" style="text-align: center;"><img class="fragment" style="vertical-align: middle; border: 0; box-shadow: 0 0 0; max-height: 50px;" src="img/wrong.png"/> "Concurrency is running several tasks at same time."</p>
-							<p class="fragment" style="text-align: center;"><img class="fragment" style="vertical-align: middle; border: 0; box-shadow: 0 0 0; max-height: 50px;" src="img/right.png"/> "Concurrency is when a task is broken down into smaller pieces and run simutaneously."</p>
-						</div>
-					</div>
-                    <aside class="notes">
-						One way to achieve conncurency is with multithreading. and for multithreading we need threads.
-					</aside>
-				</section>
-			</section>
-			<section>
-				<header>
-					<h3 style="color:red;">Threads</h3>
-				</header>
-				<section>
-				<div style="display: flex; align-content: space-between;">
-					<div class="right-divider">
-						<img style="max-width: 30vh;" src="img/thread.jpg" />
-					</div>
-					<div>
-						<p>A thread is an independent path of code execution.</p>
-						<p>Share process-wide memory and resources.</p>
-						<p>Cannot exist outside of the process lifetime.</p>
-						<p>Have their own stack and memory management.</p>
-					</div>
+							<aside class="notes">
+								memory management means each thread have their own local variables	
+							</aside>
+						</section>
+					</section>
+					<section>
+						<header>
+							<h3 style="color:red;">Processes vs Threads</h3>
+						</header>
+						<section>
+							<div style="display: flex; align-content: space-between;">
+								<div class="right-divider">
+									<img style="max-width: 30vh;" src="img/process-thread.jpg" />
+								</div>
+								<div>
+									<p class="fragment">Every process has at least one main thread.</p>
+									<p class="fragment">A process can have multiple threads.</p>
+									<p class="fragment">Threads from the same process can interact with each other without using IPC mechanisms.</p>
+									<p class="fragment">Non sincronized thread execution can produce unpredictable results.</p>
+								</div>
+							</div>
+							
+							<aside class="notes">
+								Inter Process Communications ex: sockets, signal handlers or semaphores.
+							</aside>
+						</section>
+					</section>
+					<section>
+						<header>
+							<h3 style="color:red;">Thread Creation</h3>
+						</header>
+						<section>
+							<h4>There two ways to create threads:</h4>
+								<ul>
+									<li class="fragment">Extending the Thread class</li>
+									<li class="fragment">Implement the Runnable interface</li>
+								</ul>
+							<aside class="notes">
+								Second way is preferred, better when using anonymous class.
+								Exercise with implicit use of multithreading using Timer class.
+							</aside>
+						</section>
+					</section>
+					<section>
+						<header>
+							<h3 style="color:red;">Thread Synchronization</h3>
+						</header>
+						<section>
+							<div style="display: flex; align-content: space-between;">
+								<div class="right-divider">
+									<img style="max-width: 30vh;" src="img/thread-sync.jpg" />
+								</div>
+								<div>
+									<p class="fragment">To avoid unpredictable results we need to control thread execution.</p>
+									<p class="fragment">Use <strong>Locks</strong> is the proper way to achieve thread-sync.</p>
+									<p class="fragment">Other valid approach is to use Thread <em>.join()</em> method.</p>
+									<p class="fragment">Avoid loops and using Thread <em>.sleep()</em> method.</p>
+								</div>
+							</div>
+						</section>
+							<aside class="notes">
+								We will learn about locks later.
+								We did and excercise with .join()
+								Loops are expensive and sleep doesn't garantee the exact sleep time
+							</aside>
+						</section>
+					</section>
+					<section>
+						<h1 style="color:red;">Feedback</h1>
+						<img class="fragment" src="img/turkey-feedback.jpg" />
+					</section>
 				</div>
-					<aside class="notes">
-						memory management means each thread have their own local variables	
-                    </aside>
-				</section>
-			</section>
-			<section>
-				<header>
-					<h3 style="color:red;">Processes vs Threads</h3>
-				</header>
-				<section>
-					<div style="display: flex; align-content: space-between;">
-						<div class="right-divider">
-							<img style="max-width: 30vh;" src="img/process-thread.jpg" />
-						</div>
-						<div>
-							<p>Every process has at least one main thread.</p>
-							<p>A process can have multiple threads.</p>
-							<p>Threads from the same process can interact with each other without using IPC mechanisms.</p>
-							<p>Non sincronized thread execution can produce unpredictable results.</p>
-						</div>
-					</div>
-					
-					<aside class="notes">
-						Inter Process Communications ex: sockets, signal handlers or semaphores.
-					</aside>
-				</section>
-			</section>
-			<section>
-				<header>
-					<h3 style="color:red;">Thread Creation</h3>
-				</header>
-				<section>
-					<h4>There two ways to create threads:</h4>
-						<ul>
-							<li>Extending the Thread class</li>
-							<li>Implement the Runnable interface</li>
-						</ul>
-					<aside class="notes">
-						Second way is preferred, better when using anonymous class
-					</aside>
-				</section>
-			</section>
-			<section>
-				<header>
-					<h3 style="color:red;">Thread Synchronization</h3>
-				</header>
-				<section>
-					<div style="display: flex; align-content: space-between;">
-						<div class="right-divider">
-							<img style="max-width: 30vh;" src="img/thread-sync.jpg" />
-						</div>
-						<div>
-							<p>To avoid unpredictable results we need to control thread execution.</p>
-							<p><strong>Locks</strong> are the proper way to achieve thread-sync.</p>
-							<p>Other valid approach is to use Thread <em>.join()</em> method.</p>
-							<p>Avoid loops and using Thread <em>.sleep()</em> method.</p>
-						</div>
-					</div>
-				</section>
-					<aside class="notes">
-						We will learn about locks later
-					</aside>
-				</section>
-			</section>
-			<section>
-				<h1 style="color:red;">Feedback</h1>
-				<img src="img/turkey-feedback.jpg" />
-			</section>
-		</div>
-	</div>
+			</div>
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
