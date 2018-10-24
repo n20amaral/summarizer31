@@ -1,0 +1,16 @@
+.reveal .slides img {
+    border: 0; 
+    box-shadow: 0 0 0;
+}
+
+.reveal .slides div p {
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+div.right-divider {
+    border-right: 1px solid red;
+    padding-right: 20px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
